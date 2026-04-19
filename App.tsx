@@ -1,13 +1,28 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
-import HomePage from './src/screens/home-page';
+import { View, StyleSheet } from 'react-native';
+import Header from './src/components/header';
+import Footer from './src/components/footer';
 
 export default function App() {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <HomePage message="Hello fellow programmer hey edit! lol" />
-            <HomePage message="Hello fellow programmer hey edit! lol" />
-    </SafeAreaView>
+    <View style={styles.container}>
+      {/* Header */}
+      <Header name="Dejos" />
+
+      {/* Content Area */}
+      <View style={styles.content} />
+
+      {/* Footer */}
+      <Footer />
+    </View>
   );
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  content: {
+    flex: 1, // pushes footer to bottom
+  },
+});
